@@ -13,8 +13,12 @@ class NotesApp extends StatelessWidget {
     return SafeArea(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData.dark(),
+        
+        theme: ThemeData(brightness: Brightness.dark,fontFamily: 'Poppins'),
+        
+        
         home:const NotesView(),
+        
       ),
     );
   }
