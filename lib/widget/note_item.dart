@@ -9,7 +9,7 @@ class NoteItem extends StatelessWidget {
     return Container(
       padding:const EdgeInsets.only(top: 24,bottom: 24,left: 16),
       decoration: BoxDecoration(
-        color:const Color(0xffFFCC80),
+        color:Colors.blue,
         borderRadius: BorderRadius.circular(16)
       ),
       child:  Column(
@@ -20,7 +20,7 @@ ListTile(
   title:const Text('Flutter Tips',style: TextStyle(color: Colors.black,fontSize: 26),),
   subtitle: Padding(
     padding: const EdgeInsets.only(top: 16,bottom: 16),
-    child: Text('Build your career with youssef ashraf',style: TextStyle(color: Colors.black.withOpacity(0.4),fontSize: 20),),
+    child: Text('Build your career with Youssef Ashraf',style: TextStyle(color: Colors.black.withOpacity(0.5),fontSize: 18),),
   ),
   trailing: IconButton(onPressed: (){}, icon:const Icon(FontAwesomeIcons.trash,color: Colors.black,size: 26,)),
 ),

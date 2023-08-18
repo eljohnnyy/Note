@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:note/widget/app_bar.dart';
 import 'package:note/widget/note_item.dart';
 
+import 'notes_listview.dart';
+
 class NotesViewBody extends StatelessWidget {
   const NotesViewBody({super.key});
 
@@ -12,7 +14,7 @@ class NotesViewBody extends StatelessWidget {
       child:  Column(children: [
         SizedBox(height: 10,),
         AppBar(),
-        NoteItem(),
+       Expanded(child: ListItem()),
     
     
       ],),
