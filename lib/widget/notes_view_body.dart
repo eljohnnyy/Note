@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:note/widget/app_bar.dart';
-import 'package:note/widget/note_item.dart';
+
 
 import 'notes_listview.dart';
 
