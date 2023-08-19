@@ -19,7 +19,7 @@ body: SingleChildScrollView(
       
    SizedBox(height: 10,),
       CustomAppBar(title: 'Edit Note',icon: Icons.check,),
-     SizedBox(height: 16,),
+     SizedBox(height: 30,),
        CustomTextField(hint: 'Title',),
     
      SizedBox(height: 16,),
