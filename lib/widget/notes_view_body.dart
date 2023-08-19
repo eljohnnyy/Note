@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/material.dart';
 import 'package:note/widget/app_bar.dart';
 
 
@@ -13,7 +14,7 @@ class NotesViewBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 24),
       child:  Column(children: [
         SizedBox(height: 10,),
-        AppBar(),
+        CustomAppBar(title: 'Notes',icon: Icons.search,),
        Expanded(child: ListItem()),
     
     

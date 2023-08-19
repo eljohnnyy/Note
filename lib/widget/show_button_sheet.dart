@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:note/widget/const.dart';
+
 import 'package:note/widget/customtextfield.dart';
 
 import 'custom_button.dart';
