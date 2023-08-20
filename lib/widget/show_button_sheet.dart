@@ -18,7 +18,12 @@ class AddNoteShowButton extends StatelessWidget {
       child: SingleChildScrollView(
         child: BlocConsumer<AddNoteCubit, AddNoteState>(
           listener: (context, state) {
-        
+        if(state is AddNoteFailure){
+          
+        }
+        else if(state is AddNoteSuccess){
+          Navigator.pop(context);
+        }
           },
           builder: (context, state) {
             return  ModalProgressHUD(
