@@ -14,20 +14,23 @@ class AddNoteShowButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: BlocConsumer<AddNoteCubit, AddNoteState>(
-        listener: (context, state) {
-          if (state is AddNoteFailure) {
-          } else if (state is AddNoteSuccess) {
-            Navigator.pop(context);
-          }
-        },
-        builder: (context, state) {
-          return ModalProgressHUD(
-              inAsyncCall: state is AddNoteLoading ? true : false,
-              child:const SingleChildScrollView(child:  AddNoteForm()));
-        },
+    return BlocProvider(
+      create: (context) => AddNoteCubit(),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: BlocConsumer<AddNoteCubit, AddNoteState>(
+          listener: (context, state) {
+            if (state is AddNoteFailure) {
+            } else if (state is AddNoteSuccess) {
+              Navigator.pop(context);
+            }
+          },
+          builder: (context, state) {
+            return ModalProgressHUD(
+                inAsyncCall: state is AddNoteLoading ? true : false,
+                child: const SingleChildScrollView(child: AddNoteForm()));
+          },
+        ),
       ),
     );
   }
@@ -75,7 +78,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
             ontab: () {
               if (formkey.currentState!.validate()) {
                 formkey.currentState!.save();
-              dynamic note = NoteModel(
+                var note = NoteModel(
                     title: title!,
                     subtitle: subtitle!,
                     date: DateTime.now().toString(),
