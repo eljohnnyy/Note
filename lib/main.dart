@@ -12,8 +12,10 @@ import 'package:note/widget/const.dart';
 void main()async  {
   await Hive.initFlutter();
   Bloc.observer=SimpleBlocObserver();
+
     Hive.registerAdapter(NoteModelAdapter());
-  await Hive.openBox<NoteModel>(kopenbox);
+     
+   await Hive.openBox<NoteModel>(kopenbox);
 
   runApp(const NotesApp());
 }
