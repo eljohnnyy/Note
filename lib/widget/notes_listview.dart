@@ -12,12 +12,12 @@ class ListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<CubitNotesCubit, CubitNotesState>(
       builder: (context, state) {
-        List<NoteModel>note=BlocProvider.of<CubitNotesCubit>(context).notes??[];
+        List<NoteModel>note=BlocProvider.of<CubitNotesCubit>(context).notes!;
         return Padding(
 
           padding: const EdgeInsets.symmetric(vertical: 12),
           child: ListView.builder(
-              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+         
             itemCount: note.length,
            
               padding: EdgeInsets.zero,
