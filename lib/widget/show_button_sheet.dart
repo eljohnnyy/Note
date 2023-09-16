@@ -8,6 +8,7 @@ import 'package:note/models/notes_model.dart';
 
 import 'package:note/widget/customtextfield.dart';
 
+import 'color_list_item.dart';
 import 'custom_button.dart';
 
 class AddNoteShowButton extends StatelessWidget {
@@ -93,7 +94,10 @@ class _AddNoteFormState extends State<AddNoteForm> {
               subtitle = p0;
             },
           ),
+
           const SizedBox(height: 32),
+         const ColorsListView(),
+            const SizedBox(height: 32),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
                   return CustomNormalButton(
@@ -111,3 +115,4 @@ class _AddNoteFormState extends State<AddNoteForm> {
     );
   }
 }
+
