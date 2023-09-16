@@ -22,6 +22,7 @@ class CustomNormalButton extends StatelessWidget {
       height: 55,
       child: ElevatedButton(
         onPressed: onPressed,
+        
         style: ElevatedButton.styleFrom(
             backgroundColor: kprimarycolor,
             shape: RoundedRectangleBorder(

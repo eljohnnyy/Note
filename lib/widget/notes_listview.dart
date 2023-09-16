@@ -17,13 +17,14 @@ class ListItem extends StatelessWidget {
 
           padding: const EdgeInsets.symmetric(vertical: 12),
           child: ListView.builder(
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             itemCount: note.length,
            
               padding: EdgeInsets.zero,
               itemBuilder: (context, index) {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 4),
-                  child: NoteItem(),
+                return  Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: NoteItem(noteModel: note[index],),
                 );
               }),
         );

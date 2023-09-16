@@ -6,7 +6,7 @@ abstract class CubitNotesState {}
  class CubitNotesInitial extends CubitNotesState {}
   class CubitNotesLoading extends CubitNotesState {}
   class CubitNotesSuccess extends CubitNotesState {
-final List<dynamic> notes;
+final List<NoteModel>? notes;
 
   CubitNotesSuccess(this.notes);
 

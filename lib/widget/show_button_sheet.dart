@@ -99,6 +99,7 @@ class _AddNoteFormState extends State<AddNoteForm> {
                 isLoading: state is AddNoteLoading ? true : false,
                 text: "Add",
                 onPressed: validation,
+              
               );
             },
             
