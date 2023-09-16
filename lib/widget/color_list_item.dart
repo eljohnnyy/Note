@@ -2,21 +2,45 @@ import 'package:flutter/cupertino.dart';
 
 import 'color_item.dart';
 
-class ColorsListView extends StatelessWidget {
+class ColorsListView extends StatefulWidget {
   const ColorsListView({super.key});
 
+  @override
+  State<ColorsListView> createState() => _ColorsListViewState();
+}
+
+class _ColorsListViewState extends State<ColorsListView> {
+  int currentIndex=0;
+  List<Color>colors=const[
+    Color(0xffB4436C),
+    Color(0xff4D9078),
+    Color(0xffF78154),
+    Color(0xffF2C14E),
+    Color(0xff1d3557),
+    Color(0xffb5838d),
+    Color(0xffd62828),
+    Color(0xff9b5de5),
+    Color(0xff00f5d4),
+  ];
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
       height: 38*2,
       child: ListView.builder(
-        itemCount: 10,
+        itemCount: colors.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context,index){
         
-        return const Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 8),
-          child:  ColorItem(),
+        return  Padding(
+          padding:const  EdgeInsets.symmetric(horizontal: 8),
+          child:  GestureDetector(
+            onTap: () {
+              currentIndex=index;
+              setState(() {
+                
+              });
+            },
+            child: ColorItem(isActive:currentIndex==index,color: colors[index],)),
         );
       }),
     );
