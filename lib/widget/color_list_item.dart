@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note/cubits/cubit/add_note_cubit.dart';
 
 import 'color_item.dart';
 
@@ -36,6 +38,7 @@ class _ColorsListViewState extends State<ColorsListView> {
           child:  GestureDetector(
             onTap: () {
               currentIndex=index;
+              BlocProvider.of<AddNoteCubit>(context).color=colors[index];
               setState(() {
                 
               });
