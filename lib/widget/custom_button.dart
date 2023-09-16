@@ -1,36 +1,48 @@
 import 'package:flutter/material.dart';
 
+
 import 'const.dart';
 
-class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, this.ontab, this.isloading = false});
-  final void Function()? ontab;
-  final bool isloading;
+class CustomNormalButton extends StatelessWidget {
+  const CustomNormalButton({
+    super.key,
+    required this.text,
+    required this.onPressed,
+    this.isLoading = false,
+  });
+
+  final String text;
+  final void Function() onPressed;
+  final bool isLoading;
+
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: ontab,
-      child: Container(
-          height: 55,
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-            color: kprimarycolor,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Center(
-            child: isloading
-                ? const CircularProgressIndicator(
-                    color: Colors.black,
-                  )
-                : const Text(
-                    'Add',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-          )),
+    return SizedBox(
+      width: MediaQuery.of(context).size.width,
+      height: 55,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+            backgroundColor: kprimarycolor,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20))),
+        child: isLoading
+            ? const SizedBox(
+                height: 26,
+                width: 26,
+                child: CircularProgressIndicator(
+                  color: Colors.black,
+                ),
+              )
+            : Text(
+                text,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+      ),
     );
   }
 }
